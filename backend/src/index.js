@@ -10,6 +10,7 @@ const app = express();
 
 const PORT = process.env.PORT;
 
+app.use(express.json({limit: '10mb'}));
 app.use(express.json());
 app.use(coookieParser());
 app.use(cors({
