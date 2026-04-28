@@ -5,7 +5,8 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
-import { useAuthStore } from './store/useAuthStore';
+import { useAuthStore } from './store/useAuthStore.js';
+import {useThemeStore} from './store/useThemeStore.js';
 import { Toaster } from 'react-hot-toast';
 
 import {Loader} from 'lucide-react';
@@ -14,6 +15,7 @@ import { useEffect } from 'react';
 const App = () => {
 
   const {authUser, checkAuth, isCheckingAuth} = useAuthStore();
+  const {theme} = useThemeStore();
 
   useEffect(() => {
     checkAuth();
@@ -26,8 +28,8 @@ const App = () => {
     </div>
   )
 
-  return (<>  
-    <div>
+  return (
+    <div data-theme={theme}>
 
       <Navbar />
 
@@ -43,7 +45,7 @@ const App = () => {
       <Toaster />
 
     </div>
-  </>)
+  )
 }
 
 export default App;

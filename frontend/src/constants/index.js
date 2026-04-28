@@ -1,6 +1,5 @@
-@import "tailwindcss";
-@plugin "daisyui/index.js" {
-    themes: "light",
+export const THEMES = [
+  "light",
   "dark",
   "cupcake",
   "bumblebee",
@@ -35,4 +34,4 @@
   "caramellatte",
   "abyss",
   "silk"
-}
+];
